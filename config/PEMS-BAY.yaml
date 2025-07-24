@@ -1,0 +1,54 @@
+whiten_prob: [0.2, 0.5, 0.8]
+# start up
+start_up:
+  model_name:   STMoE                                   # model name
+
+# Model Args
+model_args:
+  seq_len:      24
+  dropout:      0.1
+  num_node:     325
+  num_feat:     1
+  tradeoff:     1
+  rep_dim:      32
+  use_quantile: True
+  use_uncertainty: True
+  quantile:     0.7
+
+# static
+static_args:
+  d_hidden:     64
+  d_ff:         64
+  ff_dropout:   0
+  d_emb: 8
+
+dynamic_args:
+  d_hidden:     64
+  d_ff:         64
+  ff_dropout:   0.3
+  d_emb:        8
+  dygraph_construct:
+    time_slot:  288
+    num_hidden: 32
+    node_hidden: 12
+    time_emb_dim: 12
+    dropout: 0.1
+    seq_length: 24
+    k_t: 3
+    k_s: 2
+    gap: 3
+    num_modalities: 2
+
+rtemporal_args:
+  d_ff:        128
+  d_hidden:    64
+  ff_dropout:  0
+
+gate_args:
+  d_hidden:    32
+  num_node:    325
+  memory_size: 12
+  d_out:       1
+  num_exp:     4
+
+
